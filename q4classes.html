@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+   function vehicle(type){
+
+       vehicle.vehiclecount++;
+       this.type = type;
+
+
+
+    }
+
+    vehicle.vehiclecount = 0;
+
+    vehicle.prototype.drive = function () {
+
+       console.log('vehicle is driving');
+    };
+    var vehicle1 = new vehicle('toyota');
+
+    function car(type) {
+
+        vehicle.call(this,type);
+
+    }
+
+    car.prototype = Object.create(vehicle.prototype);
+    car.prototype.constructor = car ;
+    
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
